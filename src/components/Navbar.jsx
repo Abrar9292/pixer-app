@@ -20,7 +20,7 @@ function Navbar() {
         </div>
         <a href="#auth">
             <button className="nav-btn">Login</button>
-            <button className="btn">Add toCart</button>
+            <button className="nav-btn">Add toCart</button>
         </a>
       </div>
     </nav>
