@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import "../styles/Home.css";
 import Login from "./Login";
