@@ -1,7 +1,7 @@
-import VendorDashboard from "./pages/VendorDashboard";
+import Home from "./pages/Home";
 
 function App() {
-  return <VendorDashboard />;
+  return <Home />;
 }
 
 export default App;
