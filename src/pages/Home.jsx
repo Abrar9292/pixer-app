@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/Home.css";
+import Login from "./Login";
+import Register from "./Register";
 
 const products = [
   {
@@ -40,7 +42,7 @@ function Home() {
     <>
       <Navbar />
 
-      <section className="hero-section">
+      <section id="home" className="hero-section">
         <div className="container-fluid hero-content">
           <div className="hero-text">
             <span className="tagline">PIXER Marketplace STORE</span>
@@ -54,7 +56,11 @@ function Home() {
                 designed to upgrade your everyday digital lifestyle.
             </p>
 
-            <button className="primary-btn">Explore Products</button>
+            <a href="#products">
+                <button className="primary-btn">
+                    Shop Now
+                </button>
+            </a>
           </div>
 
           <div className="hero-card">
@@ -66,7 +72,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="products-section">
+      <section id="products" className="products-section">
         <div className="container-fluid">
           <span className="section-tag">TOP PRODUCTS</span>
           <h2>Trending Electronics</h2>
@@ -83,6 +89,11 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <section id="auth" style={{ display: "flex", gap: "140px", padding: "120px" }}>
+        <Login />
+            <Register />
+        </section>
 
       <Footer />
     </>

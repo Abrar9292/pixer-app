@@ -8,14 +8,20 @@ function Navbar() {
         </div>
 
         <div className="nav-menu">
-          <a href="#">Home</a>
-          <a href="#">Shop</a>
-          <a href="#">Categories</a>
-          <a href="#">Deals</a>
-          <a href="#">Contact</a>
-        </div>
+            <a href="#home">Home</a>
 
-        <button className="nav-btn">Add toCart</button>
+            <a href="#products">Shop</a>
+
+            <a href="#products">Categories</a>
+
+            <a href="#products">Deals</a>
+
+        <a href="#contact">Contact</a>
+        </div>
+        <a href="#auth">
+            <button className="nav-btn">Login</button>
+            <button className="btn">Add toCart</button>
+        </a>
       </div>
     </nav>
   );
