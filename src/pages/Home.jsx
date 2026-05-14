@@ -57,11 +57,11 @@ function Home() {
                 designed to upgrade your everyday digital lifestyle.
             </p>
 
-            <a href="#products">
-                <button className="primary-btn">
-                    Shop Now
-                </button>
-            </a>
+            <Link to="/products">
+              <button className="primary-btn">
+                Shop Now
+              </button>
+            </Link>
           </div>
 
           <div className="hero-card">
@@ -84,7 +84,10 @@ function Home() {
                 <img src={product.image} alt={product.name} />
                 <h3>{product.name}</h3>
                 <p className="price">{product.price}</p>
-                <button>Add to Cart</button>
+                
+                <Link to="/product-details">
+                  <button>Add to Cart</button>
+                </Link>
               </div>
             ))}
           </div>

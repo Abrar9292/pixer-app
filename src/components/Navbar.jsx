@@ -13,7 +13,7 @@ function Navbar() {
         <div className="nav-menu">
 
           <Link to="/">Home</Link>
-          <Link to="/#products">Products</Link>
+          <Link to="/products">Products</Link>
 
           <Link to="/user-dashboard">
             User Dashboard
