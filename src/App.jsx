@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 import Home from "./pages/Home";
@@ -18,7 +18,7 @@ const Payment = lazy(() => import("./pages/Payment"));
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter basename="/pixer-app">
+      <HashRouter>
         <Suspense fallback={<h1 style={{ padding: "40px" }}>Loading...</h1>}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -27,53 +27,14 @@ function App() {
             <Route path="/api-products" element={<ApiProducts />} />
             <Route path="/cart" element={<Cart />} />
 
-            <Route
-              path="/checkout"
-              element={
-                <ProtectedRoute>
-                  <Checkout />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/payment"
-              element={
-                <ProtectedRoute>
-                  <Payment />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/user-dashboard"
-              element={
-                <ProtectedRoute>
-                  <UserDashboard />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/vendor-dashboard"
-              element={
-                <ProtectedRoute>
-                  <VendorDashboard />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/analytics"
-              element={
-                <ProtectedRoute>
-                  <AnalyticsDashboard />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
+            <Route path="/payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
+            <Route path="/user-dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
+            <Route path="/vendor-dashboard" element={<ProtectedRoute><VendorDashboard /></ProtectedRoute>} />
+            <Route path="/analytics" element={<ProtectedRoute><AnalyticsDashboard /></ProtectedRoute>} />
           </Routes>
         </Suspense>
-      </BrowserRouter>
+      </HashRouter>
     </CartProvider>
   );
 }

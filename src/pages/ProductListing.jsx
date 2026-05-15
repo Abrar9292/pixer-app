@@ -1,3 +1,4 @@
+import { useCart } from "../context/CartContext";
 import "../styles/ProductListing.css";
 
 const products = [
@@ -25,9 +26,41 @@ const products = [
     price: "₹39,999",
     image: "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500",
   },
+  {
+    name: "Sony Headphones",
+    category: "Audio",
+    price: "₹14,999",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+  },
+  {
+    name: "Gaming Laptop",
+    category: "Laptop",
+    price: "₹89,999",
+    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500",
+  },
+  {
+    name: "iPad Pro",
+    category: "Tablet",
+    price: "₹79,999",
+    image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500",
+  },
+  {
+    name: "Bluetooth Speaker",
+    category: "Audio",
+    price: "₹7,999",
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",
+  },
+  {
+    name: "Drone Camera",
+    category: "Camera",
+    price: "₹64,999",
+    image: "https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?w=500",
+  },
 ];
 
 function ProductListing() {
+  const { addToCart } = useCart();
+
   return (
     <section className="marketplace-page">
       <div className="marketplace-header">
@@ -52,11 +85,15 @@ function ProductListing() {
         {products.map((product, index) => (
           <div className="market-card" key={index}>
             <img src={product.image} alt={product.name} />
+
             <div className="market-info">
               <span>{product.category}</span>
               <h3>{product.name}</h3>
               <p>{product.price}</p>
-              <button>Add to Cart</button>
+
+              <button onClick={() => addToCart(product)}>
+                Add to Cart
+              </button>
             </div>
           </div>
         ))}
