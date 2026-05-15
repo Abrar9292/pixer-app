@@ -5,6 +5,8 @@ import "../styles/Home.css";
 import Login from "./Login";
 import Register from "./Register";
 
+import { useCart } from "../context/CartContext";
+
 const products = [
   {
     name: "iPhone 15 Pro",
@@ -39,6 +41,9 @@ const products = [
 ];
 
 function Home() {
+
+  const { addToCart } = useCart();
+
   return (
     <>
       <Navbar />
@@ -85,9 +90,9 @@ function Home() {
                 <h3>{product.name}</h3>
                 <p className="price">{product.price}</p>
                 
-                <Link to="/product-details">
-                  <button>Add to Cart</button>
-                </Link>
+                <button onClick={() => addToCart(product)}>
+                  Add to Cart
+                </button>
               </div>
             ))}
           </div>
